@@ -1,0 +1,75 @@
+=================================YANG HARUS DI SEDIAKAN=================================
+1. Budget VPS
+2. Domain
+3. License Cpnel + Akun Terdaftar
+4. Aplikasi Putty Untuk Meremote
+5. VPS Minimal (CPU 1 Core, RAM 2 GB, STORAGE 20 GB)
+
+=================================WEBSITE PENYEDIA JASA=================================
+https://idcloudhost.com/(VPS)
+https://antmedia.id/(LICENSE CPNEL)
+
+https://console.idcloudhost.com/(HALAMAN CLIENT CONSOLE)
+https://my.idcloudhost.com/index.php?rp=/login(HALAMAN MEMBER AREA)
+https://my.antmedia.id/(HALAMAN CLIENT)
+
+=================================LANGKAH-LANGKAH INSTALL CPNEL WHM=================================
+sudo su
+yum update
+yum -y install pertl
+hostname vps.mydomain.com
+cd /home
+curl -o latest -L https://securedownloads.cpanel.net/latest
+sh latest
+https://your-server-ip:2087 = akses whm pannel
+https://your-server-ip:2083 = akses cpannel
+Kemudian Loginkan Akun Cpnel anda
+
+=================================LANGKAH-LANGKAH KONFIGURASI CPNEL WHM=================================
+1. Konfigurasi NS (IP Menjadi Domain Pada Member Id CloudHost)
+	- My Domain
+	- Manage Domain
+	- Name Server Ganti dengan (ns1.radenfebri.my.id, ns2.radenfebri.my.id)
+	- Private NS Tambahkan (ns1.radenfebri.my.id, ns2.radenfebri.my.id) + (IP PUBLIC VPS)
+	- DNS Managemen Tambahkan ([NAME: ns1,ns2,vps], [TYPE: A], [TTL: 14400], [RDATA: IP PUBLIC VPS]). Basic Webhost Manager (Pada WHM CPanel)
+	- Klik Configurasi Address Record (Daftrakan IP Public VPS)
+	- Lakukan pada ns1 dan ns2
+
+2. Change Hostname (Pada WHM CPanel)
+	- Isikan Hostname (vps.radenfebri.my.id)
+
+3. Mengizinkan Addon Domain
+	- Tweak Setting search addondomain (ubah ke ON)
+	- Allow Remote Domains [?] (ON)
+	- Prevent cPanel users from creating specific domains [?] (ON)
+	- Copy default error documents to docroot for new accounts, addon domains, and subdomains [?](ON)
+
+4. Install Ekstensi PHP
+	- Search EasyApache 4
+	- Costumize
+	- Next 2 kali
+	- Php Version silahkan pilih
+	- Php Extention mengijinkan (php info)
+	- next 2 kali 
+	- save (provision)
+	
+5. Izinkan SMTP
+	- SMTP Restrictions (Disable)
+
+6. Mengubah Theme (Cpanel)
+	- Theme Manager
+	- Pilih salah satu Theme
+
+7. Edit Packet
+	- Package 
+	- Edit Package
+	- Silahkan atur sendiri
+
+8. Menambahkan Akun
+	- Account
+	- Tambahkan akun
+	- Konfigurasi Per Akun
+
+9. Tambahkan Aplikasi pada Cpanel
+	- Menu CPanel
+	- Silahkan tambahkan aplikasi semisal (Wordpres dan Rouncube)
