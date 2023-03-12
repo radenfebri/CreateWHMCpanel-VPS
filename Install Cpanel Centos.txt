@@ -9,7 +9,8 @@
 sudo su
 yum update
 yum -y install pertl
-hostname vps.mydomain.com
+hostnamectl set-hostname panel.namadomain.my.id
+hostname panel.namadomain.my.id
 cd /home
 curl -o latest -L https://securedownloads.cpanel.net/latest
 sh latest
