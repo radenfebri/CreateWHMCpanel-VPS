@@ -5,14 +5,6 @@
 4. Aplikasi Putty Untuk Meremote
 5. VPS Minimal (CPU 1 Core, RAM 2 GB, STORAGE 20 GB)
 
-=================================WEBSITE PENYEDIA JASA=================================
-https://idcloudhost.com/(VPS)
-https://antmedia.id/(LICENSE CPNEL)
-
-https://console.idcloudhost.com/(HALAMAN CLIENT CONSOLE)
-https://my.idcloudhost.com/index.php?rp=/login(HALAMAN MEMBER AREA)
-https://my.antmedia.id/(HALAMAN CLIENT)
-
 =================================LANGKAH-LANGKAH INSTALL CPNEL WHM=================================
 sudo su
 yum update
